@@ -1,0 +1,70 @@
+{
+  "clubs": [
+    {
+      "id": "logicode",
+      "name": "로직코드",
+      "logo": "assets/clubs/로직코드.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        {
+          "title": "척추 교정기2",
+          "path": "assets/pdfs/척추 교정기2.pdf"
+        }, { "title": "니콜라업슬라", "path": "assets/pdfs/니콜라업슬라.pdf" }, { "title": "김다윤", "path": "assets/pdfs/김다윤.pdf" }, { "title": "유물복원 우선 순위 결정 AI", "path": "assets/pdfs/유물복원 우선 순위 결정 AI.pdf" }
+      ]
+    },
+
+    {
+      "id": "vitalis",
+      "name": "비타리스",
+      "logo": "assets/clubs/vitalis.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        {
+          "title": "2025 비타리스 활동 정리",
+          "path": "assets/pdfs/2025 비타리스 활동 정리.pdf"
+        }
+      ]
+    },
+
+    {
+      "id": "mm",
+      "name": "M&M",
+      "logo": "assets/clubs/M&M.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        { "title": "M&M 활동보고", "path": "assets/pdfs/M&M 활동보고.pdf" },
+        { "title": "10107 박세훈", "path": "assets/pdfs/10107박세훈.pdf" },
+        { "title": "10111 송이현", "path": "assets/pdfs/10111송이현.pdf" },
+        { "title": "20321 정지원", "path": "assets/pdfs/20321정지원.pdf" },
+        { "title": "10412 안지수", "path": "assets/pdfs/10412안지수.pdf" },
+        { "title": "10311 박진영", "path": "assets/pdfs/10311박진영.pdf" },
+        { "title": "송이현", "path": "assets/pdfs/송이현.pdf" },
+        { "title": "안지수", "path": "assets/pdfs/안지수.pdf" },
+        { "title": "문유경", "path": "assets/pdfs/문유경.pdf" },
+        { "title": "구동하", "path": "assets/pdfs/구동하.pdf" },
+        { "title": "박세훈", "path": "assets/pdfs/박세훈.pdf" }
+      ]
+    },
+
+    {
+      "id": "prism",
+      "name": "PRISM",
+      "logo": "assets/clubs/prism.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        {
+          "title": "이서진·이하경·유승재",
+          "path": "assets/pdfs/이서진이하경유승재.pdf"
+        },
+        {
+          "title": "물의 비율에 따른 물병던지기의 성공률",
+          "path": "assets/pdfs/물의 비율에 따른 물병던지기의 성공률.pdf"
+        },
+        {
+          "title": "모가연·박시은·강서윤",
+          "path": "assets/pdfs/모가연박시은강서윤.pdf"
+        }
+      ]
+    }
+  ]
+}
