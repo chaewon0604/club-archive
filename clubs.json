@@ -1,0 +1,51 @@
+{
+  "clubs": [
+    {
+      "id": "로직코드",
+      "name": "로직코드",
+      "logo": "assets/clubs/로직코드.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        { "title": "2024 활동 보고서", "path": "assets/pdfs/A.pdf" },
+        { "title": "프로젝트 자료", "path": "assets/pdfs/AA.pdf" }, { "title": "척추 교정 로봇", "path": "https://www.canva.com/design/DAG9LAQKACc/DPUkOMe2QmqLvpBjPRk7lw/edit?utm_content=DAG9LAQKACc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }
+      ]
+    },
+    {
+      "id": "M&M",
+      "name": "M&M",
+      "logo": "assets/clubs/M&M.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        { "title": "한려경", "path": "https://www.canva.com/design/DAG4kB3F850/M_DHGVgCBbZN33ZDPrTJlw/view?utm_content=DAG4kB3F850&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5412197dc6#8" },
+        { "title": "안지수", "path": "https://www.canva.com/design/DAG5BbFQaho/rio5DQCuM9YNnEyq9WTpNw/edit?utm_content=DAG5BbFQaho&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }, { "title": "김도운", "path": "https://www.canva.com/design/DAG2Bhk3wmw/opV8BqiXp-ZF0PRNL2IPoQ/view?utm_content=DAG2Bhk3wmw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h11712468f5" },{ "title": "조수빈", "path": "https://www.canva.com/design/DAG49dh59ns/OhAtmL0z5OnvH3hy8uIkMg/edit?utm_content=DAG49dh59ns&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },{ "title": "송이현", "path": "https://www.canva.com/design/DAG43rg2-yA/O08gNnQeW0w5ybNAKFhIVA/edit?utm_content=DAG43rg2-yA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },{ "title": "박세훈", "path": "https://www.canva.com/design/DAG5I8QLKW0/Zi2hPrXnxnCFCu5S_V8-ZQ/edit?utm_content=DAG5I8QLKW0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },{ "title": "구동하", "path": "https://www.canva.com/design/DAGxsxBo0e4/riosRDs4tOG9o_pJ-FucUw/edit?utm_content=DAGxsxBo0e4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },{ "title": "문유경", "path": "https://www.canva.com/design/DAG5DlhVXdg/Ntbg320UyKVvZVTnJkEOZA/edit?utm_content=DAG5DlhVXdg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },{ "title": "박진영", "path": "https://www.canva.com/design/DAG5JSYZFko/0BbmoLGRQPlJoo9AfU4rmQ/edit?utm_content=DAG5JSYZFko&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },{ "title": "정지원", "path": "https://www.canva.com/design/DAG5N4S8K3o/Z40nXv8cbY55nDKGljeBhg/edit?utm_content=DAG5N4S8K3o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }
+      ]
+    },
+    {
+      "id": "비타리스",
+      "name": "비타리스",
+      "logo": "assets/clubs/비타리스.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        { "title": "2025 비타리스 활동 정리", "path": "C:\\club_archive\\assets\\pdfs\\2025 비타리스 활동 정리.pdf" }
+      ]
+    },
+    {
+      "id": "prism",
+      "name": "prism",
+      "logo": "assets/clubs/prism.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        { "title": "물병던지기의 회전역학적 고찰", "path": "C:\\club_archive\\assets\\pdfs\\물병던지기의 회전역학적 고찰.pdf" }, { "title": "물의 비율에 따른 물병던지기의 성공률", "path": "C:\\club_archive\\assets\\pdfs\\물의 비율에 따른 물병던지기의 성공률.pdf" }, { "title": "초파리 반성유전 실험", "path": "C:\\club_archive\\assets\\pdfs\\초파리 반성유전 실험.pdf" }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "E 동아리",
+      "logo": "assets/clubs/E.png",
+      "desc": "활동 기록 보기",
+      "files": [
+        { "title": "활동 자료", "path": "assets/pdfs/e_1.pdf" }
+      ]
+    }
+  ]
+}
