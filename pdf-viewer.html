@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF Viewer</title>
+  <style>
+    html, body { height:100%; margin:0; background:#f3f3f3; }
+    #wrap { height:100%; overflow:auto; padding:12px; box-sizing:border-box; }
+    .page { margin: 0 auto 12px; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,.12); }
+    .msg { font: 600 14px/1.4 system-ui, sans-serif; padding:12px; }
+  </style>
+
+  <!-- ✅ PDF.js 라이브러리(CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <div class="msg" id="msg">PDF 불러오는 중...</div>
+    <div id="pages"></div>
+  </div>
+
+  <script>
+    // ✅ 워커도 CDN으로
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+    const params = new URLSearchParams(location.search);
+    const file = params.get("file"); // 예: assets/pdfs/xxx.pdf
+    const msg = document.getElementById("msg");
+    const pagesEl = document.getElementById("pages");
+    const wrap = document.getElementById("wrap");
+
+    if (!file) {
+      msg.textContent = "파일 경로가 없습니다.";
+      throw new Error("No file");
+    }
+
+    function clearPages() {
+      pagesEl.innerHTML = "";
+    }
+
+    async function renderAll() {
+      msg.textContent = "PDF 불러오는 중...";
+      clearPages();
+
+      const loadingTask = pdfjsLib.getDocument(file);
+      const pdf = await loadingTask.promise;
+
+      msg.textContent = "";
+
+      const targetWidth = Math.min(wrap.clientWidth - 24, 1400); // 너무 크게 안 가게 제한
+      for (let p = 1; p <= pdf.numPages; p++) {
+        const page = await pdf.getPage(p);
+        const viewport0 = page.getViewport({ scale: 1 });
+        const scale = targetWidth / viewport0.width;
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement("canvas");
+        canvas.className = "page";
+        canvas.width = Math.floor(viewport.width);
+        canvas.height = Math.floor(viewport.height);
+
+        const ctx = canvas.getContext("2d");
+        pagesEl.appendChild(canvas);
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+      }
+    }
+
+    // 처음 렌더
+    renderAll().catch(err => {
+      console.error(err);
+      msg.textContent = "PDF를 불러오지 못했어요. (경로/파일명 확인)";
+    });
+
+    // 창 크기 바뀌면 다시 맞춤(스탠바이미 회전/줌 대응)
+    let t = null;
+    window.addEventListener("resize", () => {
+      clearTimeout(t);
+      t = setTimeout(() => renderAll(), 250);
+    });
+  </script>
+</body>
+</html>
