@@ -1,0 +1,482 @@
+@font-face{
+  font-family: "ZenSerif";
+  src: url("assets/fonts/ZEN-SERIF-TTF-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =================
+   기본
+================= */
+*{ box-sizing:border-box; }
+
+html, body{
+  height:100%;
+  margin:0;
+  font-family: "ZenSerif", system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
+  color:#111;
+}
+
+.screen{ display:none; height:100%; width:100%; }
+.screen.active{ display:block; }
+
+/* =================
+   첫 화면
+================= */
+.screen-splash{
+  background:#ffffff;
+  position:relative;
+}
+
+.madeby{
+  position:absolute;
+  top:20px;
+  right:24px;
+  font-size:14px;
+  font-weight:300;
+  color:#555;
+  z-index: 1;
+}
+
+.center{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:24px;
+  position: relative;
+  z-index: 1;
+}
+
+#mainLogo{
+  max-width:300px;
+  max-height:55vh;
+  object-fit:contain;
+}
+
+.splash-subtitle{
+  margin-top: 20px;
+  margin-bottom: 28px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+
+/* 첫 화면 안내문(너 마지막 설정 기준) */
+.hint{
+  font-size:18px;
+  font-weight:400;
+}
+
+/* 떠다니는 로고 */
+#floating-logos{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.floating-logo{
+  position: absolute;
+  width: 90px;
+  opacity: 0.15;
+  animation: floatMove linear infinite;
+}
+
+@keyframes floatMove{
+  from{ transform: translateY(120vh) rotate(0deg); }
+  to{ transform: translateY(-20vh) rotate(360deg); }
+}
+
+/* =================
+   상단바
+================= */
+.topbar{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  border-bottom:1px solid #ccc;
+  background:#fff;
+}
+
+.topbar h1{
+  font-size:24px;
+  font-weight:800;
+  margin:0;
+}
+
+.ghost{
+  background:#fff;
+  border:1px solid #aaa;
+  padding:8px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.primary{
+  padding:10px 16px;
+  border:none;
+  border-radius:14px;
+  background:#000;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* 터치용 */
+button, img{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =================
+   메뉴 화면
+================= */
+.screen-menu{
+  background:#ffffff;
+}
+
+.menuGrid{
+  height: calc(100% - 72px - 48px);
+  display:grid;
+  gap:18px;
+  padding:24px;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: stretch;
+}
+
+.clubBtn{
+  border-radius:28px;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  border:none;
+  cursor:pointer;
+
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.clubBtn .name{
+  font-weight:900;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.05;
+  word-break: keep-all;
+}
+
+.clubBtn .sub{
+  font-weight:600;
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+/* 태블릿은 2칸 */
+@media (max-width: 1400px){
+  .menuGrid{
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+/* 폰은 1칸 */
+@media (max-width: 600px){
+  .menuGrid{ grid-template-columns: 1fr; }
+  .clubBtn{ min-height:160px; }
+}
+
+/* 버튼 색 */
+.club-logicode{ background:#000000; }
+.club-logicode .name, .club-logicode .sub{ color:#ffffff; }
+
+.club-vitalis{ background:#82cbff; }
+.club-vitalis .name, .club-vitalis .sub{ color:#000000; }
+
+.club-mm{ background:#c6acff; }
+.club-mm .name, .club-mm .sub{ color:#000000; }
+
+.club-prism{ background:#ffffb3; }
+.club-prism .name, .club-prism .sub{ color:#000000; }
+
+.club-E{ background:#fde3e3; }
+.club-E .name, .club-E .sub{ color:#000000; }
+
+/* 하단 */
+.footer{
+  height:48px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:13px;
+  color:#444;
+}
+
+/* =================
+   상세 화면 기본
+================= */
+.screen-club{
+  background:#FFFDF0;
+  color:#111;
+}
+
+/* PC(큰 화면): 좌/우 */
+.clubLayout{
+  height: calc(100% - 72px);
+  display:grid;
+  grid-template-columns: 340px 1fr;
+}
+
+.clubSide{
+  padding:18px;
+  border-right:1px solid rgba(0,0,0,.15);
+  overflow:auto;
+}
+
+#clubLogo{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:18px;
+}
+
+.clubName{
+  font-size:22px;
+  font-weight:800;
+  margin-top:10px;
+}
+
+.clubDesc{
+  font-size:14px;
+  margin:6px 0 12px;
+  color:#444;
+}
+
+.clubContent{
+  height:100%;
+  padding:20px;
+  overflow:hidden;
+}
+
+.frameWrap{
+  height:100%;
+  width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.pdfFrame,
+.frameWrap iframe,
+.frameWrap embed{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* =================
+   파일 목록 UI
+================= */
+.filesTitle{
+  margin-top: 16px;
+  font-weight: 800;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.fileList{
+  margin-top: 10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-height: 280px;
+  overflow:auto;
+  padding-right: 4px;
+}
+
+.fileBtn{
+  width:100%;
+  text-align:left;
+  padding:10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.2);
+  background:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.fileBtn.active{
+  outline: 3px solid rgba(0,0,0,.18);
+}
+
+.fileListEmpty{
+  font-size:13px;
+  opacity:.7;
+  padding:8px 0;
+}
+
+.emptyState{
+  padding:16px;
+  font-size:14px;
+}
+
+/* =================
+   상세 테마: A / B
+================= */
+.screen-club.theme-A{
+  background:#000;
+  color:#fff;
+}
+.screen-club.theme-A *{ color:#fff; }
+.screen-club.theme-A .topbar{ background:#000; border-bottom:1px solid rgba(255,255,255,.3); }
+.screen-club.theme-A .clubSide{ border-right:1px solid rgba(255,255,255,.3); }
+.screen-club.theme-A .ghost{ background:#111; color:#fff; border:1px solid rgba(255,255,255,.3); }
+.screen-club.theme-A .primary{ background:#fff; color:#000; }
+
+/* theme-A에서 오른쪽 안내/버튼 영역 */
+.screen-club.theme-A .frameWrap{
+  background:#111;
+  border-color: rgba(255,255,255,.25);
+}
+.screen-club.theme-A .emptyState{
+  color:#fff;
+}
+
+/* theme-A에서 목록/드롭다운 버튼도 어둡게 */
+.screen-club.theme-A .fileBtn{
+  background:#111;
+  border-color: rgba(255,255,255,.3);
+  color:#fff;
+}
+.screen-club.theme-A .fileBtn.active{
+  outline: 3px solid rgba(255,255,255,.25);
+}
+
+.screen-club.theme-B{
+  background:#0094ff;
+  color:#000;
+}
+.screen-club.theme-B *{ color:#000; }
+.screen-club.theme-B .topbar{ background:#26A6FF; border-bottom:1px solid rgba(0,0,0,.2); }
+.screen-club.theme-B .clubSide{ border-right:1px solid rgba(0,0,0,.2); }
+.screen-club.theme-B .ghost{ background:#fff; color:#000; border:1px solid rgba(0,0,0,.2); }
+.screen-club.theme-B .primary{ background:#000; color:#fff; }
+.screen-club.theme-B .fileBtn{
+  background:#ffffff;
+  color:#000;
+  border-color: rgba(0,0,0,.25);
+}
+.screen-club.theme-B .fileBtn.active{
+  outline: 3px solid rgba(0,0,0,.18);
+}
+
+/* =================
+   태블릿/폰: 위(목록) + 아래(PDF)
+================= */
+@media (max-width: 1400px){
+  .clubLayout{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: auto;
+    min-height: calc(100vh - 72px);
+  }
+
+  .clubSide{
+    border-right:none;
+    border-bottom:1px solid rgba(0,0,0,.15);
+  }
+
+  .clubContent{
+    height: 60vh;
+    padding: 14px 18px 18px;
+  }
+
+  .frameWrap{
+    height: 100%;
+  }
+}
+
+/* =================
+   모바일/태블릿: 파일 목록 드롭다운
+================= */
+.fileDropdownBtn{ display:none; }
+
+@media (max-width: 1400px){
+  .fileDropdownBtn{
+    display:flex;
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border-radius:14px;
+    border:1px solid rgba(0,0,0,.25);
+    background:#fff;
+    font-weight:800;
+    font-size:15px;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    cursor:pointer;
+    position: relative;
+    z-index: 5;
+  }
+
+  .fileDropdownBtn .chev{
+    font-size:18px;
+    line-height:1;
+    transition:transform .2s ease;
+  }
+
+  .fileDropdownBtn[aria-expanded="true"] .chev{
+    transform: rotate(180deg);
+  }
+
+  /* 드롭다운에서는 목록 기본 닫힘 */
+  .fileList{
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+    padding:10px;
+    border-radius:14px;
+    border:1px solid rgba(0,0,0,.18);
+    background: rgba(255,255,255,.92);
+    position: relative;
+    z-index: 5;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .fileList.open{ display:flex; }
+}
+
+/* theme-A에서 드롭다운 배경 보정 */
+@media (max-width: 1400px){
+  .screen-club.theme-A .fileDropdownBtn{
+    background:#111;
+    border-color: rgba(255,255,255,.3);
+    color:#fff;
+  }
+  .screen-club.theme-A .fileList{
+    background:#111;
+    border-color: rgba(255,255,255,.25);
+  }
+}
+
+/* 폰에서는 PDF 영역 조금 더 크게 */
+@media (max-width: 600px){
+  .clubContent{
+    height: 68vh;
+    padding: 12px 14px 16px;
+  }
+}
